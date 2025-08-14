@@ -57,9 +57,9 @@ const App = () => {
 
   const projectsData = [
     {
-      title: 'NLP-based Inventory System',
+      title: 'Agentic AI-based Inventory Management System',
       duration: 'May 2025 - June 2025',
-      description: '• Designed an NLP-based inventory system to process natural language queries with over 90% accuracy.\n• Enabled real-time database interaction for instant stock insights, improving user efficiency.',
+      description: '• Designed an Agentic AI-based inventory management system to process natural language queries with over 90% accuracy.\n• Enabled real-time database interaction for instant stock insights, improving user efficiency.',
       tech: ['n8n', 'Agentic AI', 'APIs'],
       icon: <Layout className="text-sky-400" size={32} />,
     },
