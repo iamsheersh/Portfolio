@@ -86,14 +86,6 @@ const App = () => {
     'HackerRank': ['SQL (Basic)'],
   };
 
-  const experienceData = [
-    {
-      role: 'Python Programming Intern',
-      company: 'CodSoft',
-      duration: 'One month',
-      description: 'Worked on various Python projects, gaining practical experience in software development and problem-solving. Developed and debugged scripts, contributing to real-world applications.',
-    },
-  ];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -195,7 +187,6 @@ const App = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.5 }}
         >
-          <Send size={20} />
           <span>Hire Me</span>
         </motion.a>
       </motion.div>
@@ -225,7 +216,6 @@ const App = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ type: 'spring', stiffness: 400, damping: 10, delay: 0.8 }}
       >
-        <FileText size={20} />
         <span>Resume</span>
       </motion.a>
     </motion.section>
@@ -397,7 +387,6 @@ const App = () => {
           type="submit"
           className="w-full bg-sky-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-sky-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
         >
-          <Send size={20} />
           <span>Submit</span>
         </button>
         {formStatus && <p className="mt-4 text-center text-sm font-medium">{formStatus}</p>}
