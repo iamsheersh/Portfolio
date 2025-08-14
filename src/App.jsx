@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Briefcase, Code, User, Send, Linkedin, Github, Layout, MessageCircle, GitFork, Award, FileText } from 'lucide-react';
+import { Mail, Briefcase, Code, User, Send, Linkedin, Github, Layout, MessageCircle, GitFork, Award, FileText, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const App = () => {
@@ -11,6 +11,7 @@ const App = () => {
   });
   const [formStatus, setFormStatus] = useState('');
   const [activeSection, setActiveSection] = useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Function to determine the active section based on scroll position
   useEffect(() => {
@@ -21,6 +22,7 @@ const App = () => {
         const section = document.getElementById(sectionId);
         if (section) {
           const rect = section.getBoundingClientRect();
+          // Check if the section is in the middle of the viewport
           if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5) {
             currentSection = sectionId;
             break;
@@ -86,7 +88,6 @@ const App = () => {
     'HackerRank': ['SQL (Basic)'],
   };
 
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -114,6 +115,7 @@ const App = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMenuOpen(false); // Close mobile menu after clicking a link
   };
 
   const containerVariants = {
@@ -135,6 +137,7 @@ const App = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-950/80 backdrop-blur-md shadow-lg">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold text-sky-400">Sheersh</div>
+        {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
           {['home', 'about', 'skills', 'projects', 'certifications', 'contact'].map((id) => (
             <motion.li key={id} className="relative">
@@ -157,6 +160,47 @@ const App = () => {
             </motion.li>
           ))}
         </ul>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-300 focus:outline-none">
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute top-16 left-0 right-0 bg-gray-950/90 backdrop-blur-md shadow-lg md:hidden"
+            >
+              <ul className="flex flex-col items-center py-4 space-y-4">
+                {['home', 'about', 'skills', 'projects', 'certifications', 'contact'].map((id) => (
+                  <motion.li key={id} className="w-full text-center">
+                    <a
+                      onClick={() => scrollToSection(id)}
+                      className={`block text-lg font-medium px-4 py-2 rounded-full cursor-pointer transition-colors duration-300 ${activeSection === id ? 'text-sky-400' : 'text-gray-300 hover:text-sky-200'}`}
+                    >
+                      {id.charAt(0).toUpperCase() + id.slice(1)}
+                    </a>
+                  </motion.li>
+                ))}
+                 <motion.li key="resume" className="w-full text-center">
+                  <a
+                    href="/path/to/your-resume.pdf"
+                    download="Sheersh_Resume.pdf"
+                    className="block px-4 py-2 text-lg font-semibold rounded-full bg-sky-500 text-white shadow-lg hover:bg-sky-600 transition-all duration-300"
+                  >
+                    Resume
+                  </a>
+                </motion.li>
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
@@ -179,7 +223,7 @@ const App = () => {
         transition={{ delay: 0.5, type: 'spring', stiffness: 100 }}
       >
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4">Hey, I'm Sheersh</h1>
-        <p className="text-xl md:text-3xl font-light text-sky-200">BSc IT Student | AI And Cloud Enthusiast</p>
+        <p className="text-xl md:text-3xl font-light text-sky-200">BSc IT Student | Tech Enthusiast</p>
         <motion.a
           onClick={() => scrollToSection('contact')}
           className="mt-8 inline-block px-8 py-3 bg-sky-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-sky-600 transition-all duration-300 transform hover:scale-110 cursor-pointer flex items-center justify-center space-x-2"
