@@ -136,7 +136,7 @@ const App = () => {
   const Nav = () => (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-950/80 backdrop-blur-md shadow-lg">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="text-2xl font-bold text-sky-400">Sheersh</div>
+        <div className="text-2xl font-bold text-sky-400">world</div>
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
           {['home', 'about', 'skills', 'projects', 'certifications', 'contact'].map((id) => (
@@ -223,7 +223,7 @@ const App = () => {
         transition={{ delay: 0.5, type: 'spring', stiffness: 100 }}
       >
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4">Hey, I'm Sheersh</h1>
-        <p className="text-xl md:text-3xl font-light text-sky-200">BSc IT Student | Tech Enthusiast</p>
+        <p className="text-xl md:text-3xl font-light text-sky-200">BSc IT Student | AI ANd Cloud Enthusiast</p>
         <motion.a
           onClick={() => scrollToSection('contact')}
           className="mt-8 inline-block px-8 py-3 bg-sky-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-sky-600 transition-all duration-300 transform hover:scale-110 cursor-pointer flex items-center justify-center space-x-2"
