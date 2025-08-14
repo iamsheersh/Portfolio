@@ -179,7 +179,7 @@ const App = () => {
         transition={{ delay: 0.5, type: 'spring', stiffness: 100 }}
       >
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4">Hey, I'm Sheersh</h1>
-        <p className="text-xl md:text-3xl font-light text-sky-200">BSc IT Student | Tech Enthusiast</p>
+        <p className="text-xl md:text-3xl font-light text-sky-200">BSc IT Student | AI And Cloud Enthusiast</p>
         <motion.a
           onClick={() => scrollToSection('contact')}
           className="mt-8 inline-block px-8 py-3 bg-sky-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-sky-600 transition-all duration-300 transform hover:scale-110 cursor-pointer flex items-center justify-center space-x-2"
