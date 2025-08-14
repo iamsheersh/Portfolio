@@ -334,45 +334,6 @@ const App = () => {
     </motion.section>
   );
 
-  const Achievements = () => (
-    <motion.section
-      id="achievements"
-      className="my-16 bg-gray-800 p-8 rounded-2xl shadow-xl transition-all duration-500 hover:shadow-2xl"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6 }}
-    >
-      <h2 className="text-3xl font-bold text-center mb-8">Achievements</h2>
-      <motion.div
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        {achievementsData.map((achievement, index) => (
-          <motion.div
-            key={index}
-            className="bg-gray-700 p-6 rounded-xl shadow-lg"
-            variants={itemVariants}
-            whileHover={{ scale: 1.05, backgroundColor: '#3e4a5d', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}
-            transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-          >
-            <div className="flex items-start space-x-4">
-              <Award className="text-sky-400 mt-1" size={24} />
-              <div>
-                <h3 className="text-xl font-bold text-sky-400">{achievement.title}</h3>
-                <p className="text-sm text-gray-400 mb-2">{achievement.date}</p>
-                <p className="text-gray-300 text-base">{achievement.description}</p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
-    </motion.section>
-  );
-
   const Contact = () => (
     <motion.section
       id="contact"
@@ -444,10 +405,10 @@ const App = () => {
       <div className="mt-8 text-center">
         <p className="text-lg font-medium mb-4">Or connect with me here:</p>
         <div className="flex justify-center space-x-6">
-          <a href="#" className="p-3 rounded-full bg-sky-500 hover:bg-sky-600 transition-colors duration-300">
+          <a href="https://www.linkedin.com/in/sheersh-984437267/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-sky-500 hover:bg-sky-600 transition-colors duration-300">
             <Linkedin size={24} />
           </a>
-          <a href="#" className="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors duration-300">
+          <a href="https://github.com/iamsheersh" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors duration-300">
             <Github size={24} />
           </a>
           <a href="mailto:official.sheersh@gmail.com" className="p-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors duration-300">
