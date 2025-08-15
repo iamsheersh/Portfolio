@@ -44,6 +44,7 @@ const App = () => {
     { name: 'CSS', icon: 'https://img.icons8.com/color/48/000000/css3.png' },
     { name: 'JavaScript', icon: 'https://img.icons8.com/color/48/000000/javascript--v1.png' },
     { name: 'SQL', icon: 'https://img.icons8.com/color/48/000000/sql.png' },
+    { name: 'MySQL', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG1WKozLHHneWpGnRafbRutsrBGK74JwQO1w&s' },
     { 
       name: 'n8n', 
       icon: 'https://placehold.co/48x48/ffffff/e75480?text=n8n' 
