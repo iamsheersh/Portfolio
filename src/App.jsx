@@ -194,7 +194,7 @@ const App = () => {
                     download="Sheersh_Resume.pdf"
                     className="block px-4 py-2 text-lg font-semibold rounded-full bg-sky-500 text-white shadow-lg hover:bg-sky-600 transition-all duration-300"
                   >
-                    abc
+                   {/* Resume */}
                   </a>
                 </motion.li>
               </ul>
