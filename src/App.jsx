@@ -139,7 +139,7 @@ const App = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold text-sky-400">Sheersh</div>
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden md:flex space-x-3">
           {['home', 'about', 'skills', 'projects', 'certifications', 'contact'].map((id) => (
             <motion.li key={id} className="relative">
               <a
