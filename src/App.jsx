@@ -144,7 +144,7 @@ const App = () => {
             <motion.li key={id} className="relative">
               <a
                 onClick={() => scrollToSection(id)}
-                className={`text-lg font-medium px-4 py-2 rounded-full cursor-pointer transition-colors duration-300 ${activeSection === id ? 'text-sky-400' : 'text-gray-300 hover:text-sky-200'}`}
+                className={`text-lg font-medium px-2 py-2 rounded-full cursor-pointer transition-colors duration-300 ${activeSection === id ? 'text-sky-400' : 'text-gray-300 hover:text-sky-200'}`}
               >
                 {id.charAt(0).toUpperCase() + id.slice(1)}
               </a>
