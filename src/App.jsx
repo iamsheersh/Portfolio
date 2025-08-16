@@ -189,8 +189,7 @@ const App = () => {
                     </a>
                   </motion.li>
                 ))}
-              
-                <motion.li key="resume" className="w-full text-center">
+                 <motion.li key="resume" className="w-full text-center">
                   <a
                     href="/path/to/your-resume.pdf"
                     download="Sheersh_Resume.pdf"
@@ -199,8 +198,6 @@ const App = () => {
                    {/* Resume */}
                   </a>
                 </motion.li>
-      
-     
               </ul>
             </motion.div>
           )}
