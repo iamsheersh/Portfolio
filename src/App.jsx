@@ -45,7 +45,7 @@ const App = () => {
     { name: 'JavaScript', icon: 'https://img.icons8.com/color/48/000000/javascript--v1.png' },
     { name: 'SQL', icon: 'https://img.icons8.com/color/48/000000/sql.png' },
    // { name: 'MySQL', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG1WKozLHHneWpGnRafbRutsrBGK74JwQO1w&s' },
-    { 
+    {  
       name: 'n8n', 
       icon: 'https://placehold.co/48x48/ffffff/e75480?text=n8n' 
     },
@@ -189,15 +189,15 @@ const App = () => {
                     </a>
                   </motion.li>
                 ))}
-                 <motion.li key="resume" className="w-full text-center">
-                  <a
-                    href="/path/to/your-resume.pdf"
-                    download="Sheersh_Resume.pdf"
-                    className="block px-4 py-2 text-lg font-semibold rounded-full bg-sky-500 text-white shadow-lg hover:bg-sky-600 transition-all duration-300"
-                  >
-                   {/* Resume */}
-                  </a>
-                </motion.li>
+                  <motion.li key="resume" className="w-full text-center">
+                    <a
+                      href="/path/to/your-resume.pdf"
+                      download="Sheersh_Resume.pdf"
+                      className="block px-4 py-2 text-lg font-semibold rounded-full bg-sky-500 text-white shadow-lg hover:bg-sky-600 transition-all duration-300"
+                    >
+                     Resume
+                    </a>
+                  </motion.li>
               </ul>
             </motion.div>
           )}
@@ -226,13 +226,14 @@ const App = () => {
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4">Hey, I'm Sheersh</h1>
         <p className="text-xl md:text-3xl font-light text-sky-200">BSc IT Student | AI And Cloud Enthusiast</p>
         <motion.a
-          onClick={() => scrollToSection('contact')}
+          href="/path/to/your-resume.pdf"
+          download="Sheersh_Resume.pdf"
           className="mt-8 inline-block px-8 py-3 bg-sky-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-sky-600 transition-all duration-300 transform hover:scale-110 cursor-pointer flex items-center justify-center space-x-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.5 }}
         >
-          <span>Hire Me</span>
+          <span>Download Resume</span>
         </motion.a>
       </motion.div>
     </motion.header>
@@ -253,16 +254,6 @@ const App = () => {
           I am Sheersh, a passionate 3rd-year BSc IT student. I am driven by a deep curiosity for technology and a commitment to solving problems with code. My journey in the world of IT has equipped me with a solid foundation in programming and an eagerness to learn new technologies. I enjoy building things and am always looking for new challenges to grow my skills.
         </p>
       </div>
-      <motion.a
-        href="/path/to/your-resume.pdf"
-        download="Sheersh_Resume.pdf"
-        className="absolute top-4 right-4 inline-block px-4 py-2 text-lg font-semibold rounded-full bg-sky-500 text-white shadow-lg hover:bg-sky-600 transition-all duration-300 transform hover:scale-105 cursor-pointer flex items-center space-x-2"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ type: 'spring', stiffness: 400, damping: 10, delay: 0.8 }}
-      >
-        <span>Resume</span>
-      </motion.a>
     </motion.section>
   );
 
