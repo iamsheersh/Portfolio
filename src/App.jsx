@@ -44,6 +44,7 @@ const App = () => {
     { name: 'CSS', icon: 'https://img.icons8.com/color/48/000000/css3.png' },
     { name: 'JavaScript', icon: 'https://img.icons8.com/color/48/000000/javascript--v1.png' },
     { name: 'SQL', icon: 'https://img.icons8.com/color/48/000000/sql.png' },
+   // { name: 'MySQL', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG1WKozLHHneWpGnRafbRutsrBGK74JwQO1w&s' },
     { 
       name: 'n8n', 
       icon: 'https://placehold.co/48x48/ffffff/e75480?text=n8n' 
@@ -87,7 +88,6 @@ const App = () => {
     'TCS iON': ['Communication Skills'],
     'HackerRank': ['SQL (Basic)'],
   };
-
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -135,16 +135,16 @@ const App = () => {
   };
 
   const Nav = () => (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md shadow-xl">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-950/80 backdrop-blur-md shadow-lg">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold text-sky-400">Sheersh</div>
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 items-center">
+        <ul className="hidden md:flex space-x-3">
           {['home', 'about', 'skills', 'projects', 'certifications', 'contact'].map((id) => (
             <motion.li key={id} className="relative">
               <a
                 onClick={() => scrollToSection(id)}
-                className={`text-lg font-medium px-4 py-2 rounded-full cursor-pointer transition-colors duration-300 ${activeSection === id ? 'text-sky-400' : 'text-gray-300 hover:text-sky-200'}`}
+                className={`text-lg font-medium px-2 py-2 rounded-full cursor-pointer transition-colors duration-300 ${activeSection === id ? 'text-sky-400' : 'text-gray-300 hover:text-sky-200'}`}
               >
                 {id.charAt(0).toUpperCase() + id.slice(1)}
               </a>
@@ -160,16 +160,6 @@ const App = () => {
               )}
             </motion.li>
           ))}
-          <motion.li key="resume" className="relative">
-            <a
-              href="/path/to/your-resume.pdf"
-              download="Sheersh_Resume.pdf"
-              className="inline-block px-4 py-2 text-lg font-semibold rounded-full bg-sky-500 text-white shadow-lg hover:bg-sky-600 transition-all duration-300 transform hover:scale-105 cursor-pointer flex items-center justify-center space-x-2"
-            >
-              <FileText size={20} />
-              <span>Resume</span>
-            </a>
-          </motion.li>
         </ul>
 
         {/* Mobile Menu Button */}
@@ -199,6 +189,15 @@ const App = () => {
                     </a>
                   </motion.li>
                 ))}
+                 <motion.li key="resume" className="w-full text-center">
+                  <a
+                    href="/path/to/your-resume.pdf"
+                    download="Sheersh_Resume.pdf"
+                    className="block px-4 py-2 text-lg font-semibold rounded-full bg-sky-500 text-white shadow-lg hover:bg-sky-600 transition-all duration-300"
+                  >
+                   {/* Resume */}
+                  </a>
+                </motion.li>
               </ul>
             </motion.div>
           )}
@@ -207,39 +206,37 @@ const App = () => {
     </nav>
   );
 
-  const Hero = () => {
-    return (
-      <motion.header
-        id="home"
-        className="flex items-center justify-center h-screen bg-gray-800 text-center relative overflow-hidden"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+  const Hero = () => (
+    <motion.header
+      id="home"
+      className="flex items-center justify-center h-screen bg-gray-800 text-center relative overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-sky-900 opacity-90"></div>
+      <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-sky-500 rounded-full mix-blend-multiply filter blur-2xl opacity-70 glow-animate"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-500 rounded-full mix-blend-multiply filter blur-2xl opacity-70 glow-animate" style={{ animationDelay: '2s' }}></div>
+      <motion.div
+        className="z-10 text-white p-6 rounded-xl shadow-2xl backdrop-filter backdrop-blur-md bg-gray-900/60 transition-transform duration-500 hover:scale-105"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.5, type: 'spring', stiffness: 100 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-sky-900 opacity-90"></div>
-        <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-sky-500 rounded-full mix-blend-multiply filter blur-2xl opacity-70 glow-animate"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-500 rounded-full mix-blend-multiply filter blur-2xl opacity-70 glow-animate" style={{ animationDelay: '2s' }}></div>
-        <motion.div
-          className="z-10 text-white p-6 rounded-xl shadow-2xl backdrop-filter backdrop-blur-md bg-gray-900/60 transition-transform duration-500 hover:scale-105"
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5, type: 'spring', stiffness: 100 }}
+        <h1 className="text-4xl md:text-6xl font-extrabold mb-4">Hey, I'm Sheersh</h1>
+        <p className="text-xl md:text-3xl font-light text-sky-200">BSc IT Student | AI And Cloud Enthusiast</p>
+        <motion.a
+          onClick={() => scrollToSection('contact')}
+          className="mt-8 inline-block px-8 py-3 bg-sky-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-sky-600 transition-all duration-300 transform hover:scale-110 cursor-pointer flex items-center justify-center space-x-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4">Hey, I'm Sheersh</h1>
-          <p className="text-xl md:text-3xl font-light text-sky-200">BSc IT Student | AI And Cloud Enthusiast</p>
-          <motion.a
-            onClick={() => scrollToSection('contact')}
-            className="mt-8 inline-block px-8 py-3 bg-sky-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-sky-600 transition-all duration-300 transform hover:scale-110 cursor-pointer flex items-center justify-center space-x-2"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.5 }}
-          >
-            <span>Hire Me</span>
-          </motion.a>
-        </motion.div>
-      </motion.header>
-    );
-  };
+          <span>Hire Me</span>
+        </motion.a>
+      </motion.div>
+    </motion.header>
+  );
 
   const About = () => (
     <motion.section
@@ -256,6 +253,16 @@ const App = () => {
           I am Sheersh, a passionate 3rd-year BSc IT student. I am driven by a deep curiosity for technology and a commitment to solving problems with code. My journey in the world of IT has equipped me with a solid foundation in programming and an eagerness to learn new technologies. I enjoy building things and am always looking for new challenges to grow my skills.
         </p>
       </div>
+      <motion.a
+        href="/path/to/your-resume.pdf"
+        download="Sheersh_Resume.pdf"
+        className="absolute top-4 right-4 inline-block px-4 py-2 text-lg font-semibold rounded-full bg-sky-500 text-white shadow-lg hover:bg-sky-600 transition-all duration-300 transform hover:scale-105 cursor-pointer flex items-center space-x-2"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ type: 'spring', stiffness: 400, damping: 10, delay: 0.8 }}
+      >
+        <span>Resume</span>
+      </motion.a>
     </motion.section>
   );
 
