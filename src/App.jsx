@@ -45,6 +45,7 @@ const App = () => {
     { name: 'JavaScript', icon: 'https://img.icons8.com/color/48/000000/javascript--v1.png' },
     { name: 'SQL', icon: 'https://img.icons8.com/color/48/000000/sql.png' },
    // { name: 'MySQL', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG1WKozLHHneWpGnRafbRutsrBGK74JwQO1w&s' },
+    { name: 'Vibe Coding', icon: 'https://www.google.com/imgres?q=vibe%20coding%20logo&imgurl=https%3A%2F%2Farnaudunjo.com%2Fwp-content%2Fuploads%2F2025%2F06%2F67f3ec3085345dba2f7a2cf7_thumbnail-vibe-coding-1-1000x562.jpg&imgrefurl=https%3A%2F%2Farnaudunjo.com%2F2025%2F06%2F22%2Fvibe-coding-the-immediate-future-of-application-development%2F&docid=aBQoXYNKHpncmM&tbnid=YCHohGGdKD3ABM&vet=12ahUKEwiWhd6hgpePAxXbRmwGHcpJBmUQM3oECB0QAA..i&w=1000&h=562&hcb=2&ved=2ahUKEwiWhd6hgpePAxXbRmwGHcpJBmUQM3oECB0QAA'},
     {  
       name: 'n8n', 
       icon: 'https://placehold.co/48x48/ffffff/e75480?text=n8n' 
